@@ -4,7 +4,7 @@
   "description": "mochajs demo and CICD in github demo",
   "main": "index.js",
   "scripts": {
-    "test": "mocha  -R markdown > spec.md"
+    "test": "mocha "
   },
   "devDependencies": {
     "ts-node": "^8.0.3",
