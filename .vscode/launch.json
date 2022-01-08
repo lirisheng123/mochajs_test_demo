@@ -1,0 +1,12 @@
+{
+    "version": "1.0.0",
+    "configurations": [
+      {
+        "name": "Launch with demo.js",
+         "type":"node",
+         "request": "launch",
+         "program": "${workspaceFolder}/src/demo.js"
+      }
+    ]
+}
+ 
