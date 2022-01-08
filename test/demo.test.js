@@ -19,9 +19,15 @@ describe("test a+b in different enviroment", function(){
             throw new Error("Expected promise to be rejected but it was fulfilled");
         }
         function mayBeRejected(){
-            return Promise.resolve();
+            return Promise.resolve(new Error("woo"));
         }
-            return mayBeRejected().then(failTest).catch(function (error) {
+            return mayBeRejected().then(result =>{
+                if ( result instanceof Error){
+                    throw result
+                }else{
+                    failTest()
+                }
+            }).catch(function (error) {
                 expect(error.message).to.be.eq("woo");
             });
         });    
