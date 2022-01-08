@@ -4,7 +4,7 @@
   "description": "mochajs demo and CICD in github demo",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ",
+    "test": "mocha",
     "coverage": "node ./node_modules/nyc/bin/nyc.js --reporter=text-lcov > coverage.lcov  ./node_modules/mocha/bin/_mocha",
     "report-coverage": "nyc --reporter=text-lcov > coverage.lcov mocha"
   },
