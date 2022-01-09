@@ -23,7 +23,7 @@ jobs:
       DAY_OF_WEEK: Mon
       token_demo: "99999token"
       demo: "99999token"
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }} 
+      CODECOV_TOKEN: "dfca0038-9e6a-4fc4-a5a5-51a43702de9c" 
 
     steps:
     - uses: actions/checkout@v2
