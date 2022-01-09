@@ -25,6 +25,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         cache: 'npm'
         #- run: npm ci
         # - run: npm run build --if-present
@@ -34,4 +35,5 @@ jobs:
     - run: npm install 
     - run: npm test
     - run: npm run report-coverage
-    - run: codecov --token ${{ secrets.CODECOV_TOKEN }}
+    - run: echo  "$CODECOV_TOKEN"
+    - run: codecov --token  "$CODECOV_TOKEN"
