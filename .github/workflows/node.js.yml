@@ -28,7 +28,8 @@ jobs:
       env:
         node-version: ${{ matrix.node-version }} 
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }} 
-        token_devmo: "99999token"
+        token_demo: "99999token"
+        demo: "99999token"
 
         #- run: npm ci
         # - run: npm run build --if-present
@@ -42,4 +43,5 @@ jobs:
     - run: echo "$node-version"
     - run: echo "token demo params print:"
     - run: echo "$token_demo"
+    - run: echo "$demo"
     - run: codecov --token  "$CODECOV_TOKEN"
