@@ -16,7 +16,7 @@ describe("test a+b in different enviroment", function(){
     it("should bad pattern", function () {
                 
         function failTest() { //通过throw来使测试失败
-            throw new Error("Expected promise to be rejected but it was fulfilled");
+            throw new Error("Expected promise to be rejected but it was  fulfilled");
         }
         function mayBeRejected(){
             return Promise.resolve(new Error("woo"));
