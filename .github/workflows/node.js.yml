@@ -34,9 +34,8 @@ jobs:
         cache: 'npm'
       env: 
         CODECOV_TOKENA: ${{ secrets.CODECOV_TOKEN }} 
-      run: echo "print"  
       run: echo "$CODECOV_TOKENA"   
-      run: echo $CODECOV_TOKENA
+
 
         #- run: npm ci
         # - run: npm run build --if-present
