@@ -20,7 +20,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     
     env:
-      CODECOV_TOKEN: ${{ secrets.CODECOV.CODECOV_TOKEN }} 
+      CODECOV_TOKEN: "dfca0038-9e6a-4fc4-a5a5-51a43702de9c" 
 
     steps:
     - uses: actions/checkout@v2
@@ -42,6 +42,6 @@ jobs:
     - name: Codecov
       uses: codecov/codecov-action@v2
       with:
-        token: "dfca0038-9e6a-4fc4-a5a5-51a43702de9c"
+        token: ${{ secrets.CODECOV_TOKEN }}
         flags: unittests
    # - run: codecov --token  "$CODECOV_TOKEN"
