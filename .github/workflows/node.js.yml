@@ -18,19 +18,21 @@ jobs:
       matrix:
         node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    
+    env:
+      DAY_OF_WEEK: Mon
+      token_demo: "99999token"
+      demo: "99999token"
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }} 
 
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
-        cache: 'npm'
-      env:
         node-version: ${{ matrix.node-version }} 
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }} 
-        token_demo: "99999token"
-        demo: "99999token"
-
+        cache: 'npm'
+        
         #- run: npm ci
         # - run: npm run build --if-present
     - run: npm install codecov --global   
