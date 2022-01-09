@@ -20,10 +20,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     
     env:
-      DAY_OF_WEEK: Mon
-      token_demo: "99999token"
-      demo: "99999token"
-      CODECOV_TOKEN: "dfca0038-9e6a-4fc4-a5a5-51a43702de9c" 
+      CODECOV_TOKEN: ${{ secrets.CODECOV.CODECOV_TOKEN }} 
 
     steps:
     - uses: actions/checkout@v2
@@ -42,7 +39,6 @@ jobs:
     - run: npm test
     - run: npm run report-coverage
     - run: echo  "$CODECOV_TOKEN"
-    - run: echo "$token_demo"
     - name: Codecov
       uses: codecov/codecov-action@v2
       with:
