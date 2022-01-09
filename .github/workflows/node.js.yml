@@ -32,22 +32,21 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }} 
         cache: 'npm'
-   
+    - name: Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        token: "dfca0038-9e6a-4fc4-a5a5-51a43702de9c"
+        flags: unittests
         #- run: npm ci
         # - run: npm run build --if-present
-    - name: print token
-      env: 
-        CODECOV_TOKENA: ${{ secrets.CODECOV_TOKEN }} 
-      run: echo "$CODECOV_TOKENA"
-    - run: npm install codecov --global   
+
+   # - run: npm install codecov --global   
     - run: npm install  nyc@15.1.0 --global
     - run: npm install  mocha@9.1.3 --global
     - run: npm install 
     - run: npm test
     - run: npm run report-coverage
     - run: echo  "$CODECOV_TOKEN"
-    - run: echo "$node-version"
-    - run: echo "token demo params print:"
     - run: echo "$token_demo"
-    - run: echo "$demo"
-    - run: codecov --token  "$CODECOV_TOKEN"
+   # - run: codecov --token  "$CODECOV_TOKEN"
+    - run: codecov
