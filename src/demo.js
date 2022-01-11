@@ -1,7 +1,12 @@
 
-//简单函数
+//同步简单函数
 function add(a, b){
    return a+b;
+}
+
+//同步异常函数
+function addError(a, b){
+    throw Error("a+b exception")
 }
 
 
@@ -11,14 +16,16 @@ async  function addAsyn(a, b){
     
 }
 
-function test_addAsyn(a, b){
+async function addAsynError(a, b){
 
-    return addAsyn(a, b)
+    throw Error("a+b Asyn exception")
 
 }
 
+
 module.exports = {
     "add": add,
+    "addError": addError,
     "addAsyn": addAsyn,
-    "test_addAsyn": test_addAsyn
+    "addAsynError": addAsynError
 }
